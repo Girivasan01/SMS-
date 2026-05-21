@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #0a0f1e;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(145deg, #0a0f1e 0%, #111827 52%, #090d18 100%);
+  color: #f8fafc;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.45);
+  color: #ffffff;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-xl border border-white/10 bg-white/[0.04] shadow-glow backdrop-blur;
+  }
+
+  .field {
+    @apply rounded-lg border border-white/10 bg-white/5 text-white placeholder:text-slate-500 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-500/40;
+  }
+
+  .icon-button {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:border-blue-400/70 hover:bg-blue-500/15 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold capitalize;
+  }
+
+  .thin-scrollbar {
+    scrollbar-color: rgba(59, 130, 246, 0.6) rgba(255, 255, 255, 0.06);
+    scrollbar-width: thin;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.7);
+    border-radius: 999px;
+  }
+}
