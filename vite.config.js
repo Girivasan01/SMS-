@@ -7,7 +7,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://darkblue-pig-554261.hostingersite.com',
-        changeOrigin: true
+        changeOrigin: true,
+        secure: false
       }
     }
   }
