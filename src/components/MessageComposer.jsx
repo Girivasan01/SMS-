@@ -156,7 +156,7 @@ export default function MessageComposer({
         }}
         className="mb-4 w-full rounded bg-white/10 px-3 py-2 text-sm text-white"
       >
-        <option value="">
+        <option value="" style={{ color: '#0b1220', background: '#ffffff' }}>
           Select Template
         </option>
 
@@ -164,6 +164,7 @@ export default function MessageComposer({
           <option
             key={t.id}
             value={t.id}
+            style={{ color: '#0b1220', background: '#ffffff' }}
           >
             {t.name}
           </option>
