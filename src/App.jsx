@@ -4,7 +4,7 @@ import { Activity, Database } from 'lucide-react';
 import CampaignHistory from './components/CampaignHistory.jsx';
 import ContactsTable from './components/ContactsTable.jsx';
 
-axios.defaults.baseURL = 'https://darkblue-pig-554261.hostingersite.com';
+axios.defaults.baseURL = 'http://darkblue-pig-554261.hostingersite.com';
 import FileUpload from './components/FileUpload.jsx';
 import MessageComposer from './components/MessageComposer.jsx';
 import SendButton from './components/SendButton.jsx';
@@ -18,6 +18,7 @@ export default function App() {
   const [activeCampaignId, setActiveCampaignId] = useState(null);
   const [toast, setToast] = useState(null);
   const pollTimers = useRef({});
+  const [imageUrl, setImageUrl] = useState('');
 
   const fetchContacts = useCallback(async () => {
     try {
@@ -66,12 +67,12 @@ export default function App() {
             previousCampaigns.map((campaign) =>
               campaign.id === id
                 ? {
-                    ...campaign,
-                    status: data.status,
-                    sent_count: data.sent_count,
-                    failed_count: data.failed_count,
-                    total_contacts: data.total_contacts
-                  }
+                  ...campaign,
+                  status: data.status,
+                  sent_count: data.sent_count,
+                  failed_count: data.failed_count,
+                  total_contacts: data.total_contacts
+                }
                 : campaign
             )
           );
@@ -120,7 +121,7 @@ export default function App() {
     setIsSending(true);
 
     try {
-      const { data } = await axios.post('/api/sms/send', { message });
+      const { data } = await axios.post('/api/sms/send', { message, imageUrl });
       setActiveCampaignId(data.campaignId);
       setToast({
         type: 'info',
@@ -207,6 +208,7 @@ export default function App() {
               message={message}
               onChange={setMessage}
               contactCount={contacts.length}
+              setImageUrl={setImageUrl}
             />
             <SendButton
               onSend={handleSend}

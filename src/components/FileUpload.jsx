@@ -114,8 +114,8 @@ export default function FileUpload({ onUploadSuccess }) {
 
       <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-slate-400">
-          Columns required: <code className="rounded bg-white/10 px-1.5 py-0.5">name</code>{' '}
-          <code className="rounded bg-white/10 px-1.5 py-0.5">phone_number</code>
+          Columns required: <code className="rounded bg-white/10 px-1.5 py-0.5">Full Name</code>{' '}
+          <code className="rounded bg-white/10 px-1.5 py-0.5">Cell Phone</code>
         </p>
         <button
           type="button"

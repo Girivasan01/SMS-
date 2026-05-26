@@ -6,7 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://darkblue-pig-554261.hostingersite.com',
+        // target: 'https://darkblue-pig-554261.hostingersite.com',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false
       }
