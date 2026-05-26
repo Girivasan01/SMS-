@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { MessageSquare } from 'lucide-react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://darkblue-pig-554261.hostingersite.com';
+axios.defaults.baseURL = 'https://darkblue-pig-554261.hostingersite.com';
 
 export default function MessageComposer({
   message,

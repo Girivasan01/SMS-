@@ -4,7 +4,7 @@ import { Activity, Database } from 'lucide-react';
 import CampaignHistory from './components/CampaignHistory.jsx';
 import ContactsTable from './components/ContactsTable.jsx';
 
-axios.defaults.baseURL = 'http://darkblue-pig-554261.hostingersite.com';
+axios.defaults.baseURL = 'https://darkblue-pig-554261.hostingersite.com';
 import FileUpload from './components/FileUpload.jsx';
 import MessageComposer from './components/MessageComposer.jsx';
 import SendButton from './components/SendButton.jsx';
